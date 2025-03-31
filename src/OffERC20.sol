@@ -20,6 +20,7 @@ contract OffERC20 is ERC20 {
     }
 
     function collateralize(address to, uint256 amount) public onlyInstitution {
+        token.safeTransferFrom(msg.sender, address(this), amount);
         _mint(to, amount);
     }
 
