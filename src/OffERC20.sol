@@ -6,12 +6,12 @@ import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import {ISSM} from "./ISSM.sol";
 
-contract offERC20 is ERC20 {
+contract OffERC20 is ERC20 {
     using SafeERC20 for IERC20;
 
     address public institution;
     IERC20 immutable public token;
-    ISSM immutable public ssm; // settlement security module
+    ISSM immutable public ssm; // settlement security module 
 
     constructor(address _token, address _ssm) ERC20("offERC20", "offERC20") {
         token = IERC20(_token);
